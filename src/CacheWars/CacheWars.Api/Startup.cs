@@ -24,6 +24,7 @@ namespace CacheWars.Api
             services.Configure<MoviesSettings>(config => Configuration.GetSection(nameof(MoviesSettings)).Bind(config));
             services.AddHttpClient<IMovieGateway, MovieGateway>();
             services.AddTransient<IMovieService, MovieService>();
+            services.AddMemoryCache();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
